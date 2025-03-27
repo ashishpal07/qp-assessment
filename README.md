@@ -32,18 +32,23 @@ The API uses **PostgreSQL** for data storage and **Prisma ORM** for database ope
 - **JWT** for authentication
 - **Docker** for containerization
 
-- NOTE: I have tried seed the database for initial admin user seeding but getting lot of errors while building docker
-sot thats why i removed that and you have to do 1 thing to create admin you can manually go into database and change
-any user role to 'ADMIN'. 
-or I am giving you the script you can run that fucntion or file after starting project.
+⚡ Admin User Seeding
+Note: The database seeding for the initial admin user is not automated due to issues while building Docker.
 
-create seed.ts file into src/prisma/seet.ts
-and add below seed script into package.json into script tag
+After the application starts, you can manually create an admin user using following
 
-```"seed": "ts-node src/seed.ts```
+Use the Provided Seed Script
+
+Add the following script to the package.json file:
+```
+"scripts": {
+  "seed": "ts-node src/prisma/seed.ts"
+}
+```
+Create a seed.ts file in src/prisma/seed.ts with the following code:
 
 ```
-import { prisma } from '../src/config/prisma'; // Assuming your singleton is exported from here
+import { prisma } from '../src/config/prisma';
 import bcrypt from 'bcrypt';
 
 async function main() {
@@ -76,8 +81,8 @@ main()
   .finally(async () => {
     await prisma.$disconnect();
   });
-```
 
+```
 ---
 
 ## 🚀 Getting Started
