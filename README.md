@@ -148,3 +148,6 @@ to cancel order => `PATCH` /api/v1/orders/:orderId
 
 I havent created swagger docs you can refer for DTO => /src/types/
 
+# Testing
+You can test using postman with the collection provided link in the following link
+(postman collection link)[https://github.com/ashishpal07/qp-assessment/blob/master/api_postman_collection/booking-groceries.postman_collection.json]
