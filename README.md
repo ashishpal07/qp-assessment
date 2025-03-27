@@ -110,7 +110,7 @@ Create a `.env` file in the root directory and to create `.env` file refer `.env
 ```sudo docker-compose down```
 
 ## 🧑‍💻 Run Locally Without Docker
-## Make sure PostgreSQL is running and accessible.
+### Make sure PostgreSQL is running and accessible.
 
 ## Install Dependencies
 
