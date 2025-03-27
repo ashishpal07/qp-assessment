@@ -128,5 +128,21 @@ Start the Application
 
 ```npm run dev```
 
+# All API endpoints
 
+Only Admin accessible endpoints
+to create grocery => `POST` /api/v1/groceries
+to update grocery => `PATCH` /api/v1/groceries/:groceryId
+to delete grocery => `DELETE` /api/v1/groceries/:groceryId
+to deliver order => `PATCH` /api/v1/orders/deliver/:orderId
+
+User accessible endpints
+to register himself => `POST` /api/v1/users/register
+to login himself => `POST` /api/v1/users/login
+to see all groceries => `GET` /api/v1/groceries
+to get single groceries => `GET` /api/v1/groceries/:groceryId
+to make order => `POST` /api/v1/orders
+to cancel order => `PATCH` /api/v1/orders/:orderId
+
+I havent created swagger docs you can refer for DTO => /src/types/
 
