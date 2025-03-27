@@ -35,9 +35,9 @@ The API uses **PostgreSQL** for data storage and **Prisma ORM** for database ope
 ⚡ Admin User Seeding
 Note: The database seeding for the initial admin user is not automated due to issues while building Docker.
 
-After the application starts, you can manually create an admin user using following
+After the application starts, you can manually create an admin user using following 2 ways
 
-Use the Provided Seed Script
+1. Use the Provided Seed Script [Recommended]
 
 Add the following script to the package.json file:
 ```
@@ -83,6 +83,8 @@ main()
   });
 
 ```
+
+2. After creating single user go to the USER table in database and just update the role from `USER to ADMIN` [Not recommended]
 ---
 
 ## 🚀 Getting Started
