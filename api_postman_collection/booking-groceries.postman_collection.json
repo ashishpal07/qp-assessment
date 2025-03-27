@@ -1,0 +1,187 @@
+{
+	"info": {
+		"_postman_id": "e875f977-4629-41c8-a9d8-e8718541c830",
+		"name": "booking-groceries",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "20702575"
+	},
+	"item": [
+		{
+			"name": "register",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"ashish@gmail.com\",\n    \"password\": \"123\",\n    \"name\": \"Ashish\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:4000/api/v1/users/register"
+			},
+			"response": []
+		},
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"admin@gmail.com\",\n    \"password\": \"admin123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:4000/api/v1/users/login"
+			},
+			"response": []
+		},
+		{
+			"name": "create groceries",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQzMDAzNTcyLCJleHAiOjE3NDMwODk5NzJ9.XxSZPAgP7Y6SiLCKpVtveUzsybae7mWbcmg-pjW3AN4"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Carrot\",\n    \"description\": \"Vegitable\",\n    \"price\": 30,\n    \"stock\": 110\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:4000/api/v1/groceries/"
+			},
+			"response": []
+		},
+		{
+			"name": "update grocery",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQzMDA0MTcxLCJleHAiOjE3NDMwOTA1NzF9.iJD3lCUGqF_VJhp_kKUBWpSb127s65McxKITmIpl3dI"
+					}
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"stock\": 165,\n    \"price\": 11\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:4000/api/v1/groceries/2"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQzMDA0MTcxLCJleHAiOjE3NDMwOTA1NzF9.iJD3lCUGqF_VJhp_kKUBWpSb127s65McxKITmIpl3dI"
+					}
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:4000/api/v1/groceries/3"
+			},
+			"response": []
+		},
+		{
+			"name": "get grocery",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQzMDA0MTcxLCJleHAiOjE3NDMwOTA1NzF9.iJD3lCUGqF_VJhp_kKUBWpSb127s65McxKITmIpl3dI"
+					}
+				},
+				"method": "GET",
+				"header": [],
+				"url": "localhost:4000/api/v1/groceries/2"
+			},
+			"response": []
+		},
+		{
+			"name": "get all groceries",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:4000/api/v1/groceries"
+			},
+			"response": []
+		},
+		{
+			"name": "create order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NDMwMDQ2NTIsImV4cCI6MTc0MzA5MTA1Mn0.uToa07qB5Xd0lH50Zo724NOb6sMvdNOKj6H_ajCOyqo"
+					}
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"orderItems\": [\n        {\n            \"groceryId\": 2,\n            \"quantity\": 5\n        },\n        {\n            \"groceryId\": 1,\n            \"quantity\": 2\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:4000/api/v1/orders"
+			},
+			"response": []
+		},
+		{
+			"name": "Cancel order",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwicm9sZSI6IlVTRVIiLCJpYXQiOjE3NDMwMDQ2NTIsImV4cCI6MTc0MzA5MTA1Mn0.uToa07qB5Xd0lH50Zo724NOb6sMvdNOKj6H_ajCOyqo"
+					}
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": "localhost:4000/api/v1/orders/cancel/1"
+			},
+			"response": []
+		},
+		{
+			"name": "order delivered",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": {
+						"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Miwicm9sZSI6IkFETUlOIiwiaWF0IjoxNzQzMDA2NjYwLCJleHAiOjE3NDMwOTMwNjB9.SpRamSztSbkGRH6HLo2Fg-FinS4PfwXtDVg8OaOSAWc"
+					}
+				},
+				"method": "PATCH",
+				"header": [],
+				"url": "localhost:4000/api/v1/orders/deliver/2"
+			},
+			"response": []
+		}
+	]
+}
